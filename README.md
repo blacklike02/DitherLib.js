@@ -1,5 +1,6 @@
 # DitherLib.js
 dithering javascript library 
+
 ## Installation
 
 ```html
@@ -25,7 +26,7 @@ dither-contrast      Contrast 0.1-3.0 (default 1.0)
 dither-brightness    Brightness -1.0 - 1.0 (default 0)
 dither-diffusion     Effect strength 0-1.0 (default 1.0)
 dither-serpentine    Quality improvement true/false (default false)
-dither-fps           Frames per second for video/GIF 1-60 (default 30)
+dither-fps           Frames per second for video 1-60 (default 30)
 ```
 
 ## JavaScript API
@@ -44,9 +45,6 @@ DitherLib.applyToCanvas(canvas, { levels: 4, isColor: true });
 const ctrl = DitherLib.applyToVideo(video, outputCanvas, { fps: 30 });
 ctrl.stop();
 ctrl.start();
-
-// GIF
-const ctrl = DitherLib.applyToGif(gif, { palette: 'gameboy' });
 ```
 
 ## Configuration
@@ -102,6 +100,11 @@ sepia                4 shades vintage
 
 <!-- Color pixel art -->
 <img src="photo.jpg" dither="ordered" dither-color="true" dither-levels="3">
+
+<!-- Video processing -->
+<video dither="floyd-steinberg" dither-palette="gameboy" dither-fps="30">
+  <source src="video.mp4">
+</video>
 ```
 
 ```javascript
@@ -120,3 +123,4 @@ const controller = DitherLib.applyToVideo(video, canvas, {
   fps: 30
 });
 ```
+
