@@ -17,7 +17,7 @@ dithering javascript library
 ## Attributes
 
 ```
-dither               Algorithm (floyd-steinberg, atkinson, stucki, sierra, ordered, random)
+dither               Algorithm (floyd-steinberg, atkinson, burkes, ordered, random, threshold)
 dither-palette       Palette (gameboy, c64, cga, ega, apple2, bw, sepia)
 dither-levels        Color count 2-256 (default 2)
 dither-color         Color mode true/false (default false)
@@ -70,13 +70,12 @@ const ctrl = DitherLib.applyToGif(gif, { palette: 'gameboy' });
 ```
 floyd-steinberg      Universal, classic
 atkinson             Soft effect
-stucki               High quality for photos
-sierra               Fast, good balance
+burkes               Fast, good quality
+jarvis-judice-ninke  High quality, slow
 ordered/bayer        Patterns, for textures
 random/noise         Random noise
+threshold/bitmap     Simple black & white
 ```
-
-Full list: floyd-steinberg, atkinson, jarvis-judice-ninke, stucki, burkes, sierra, sierra-lite, two-row-sierra, ordered, bayer, random, noise
 
 ## Palettes
 
@@ -98,8 +97,8 @@ sepia                4 shades vintage
 <!-- Game Boy effect -->
 <img src="photo.jpg" dither="atkinson" dither-palette="gameboy" dither-serpentine="true">
 
-<!-- Newspaper print -->
-<img src="photo.jpg" dither="floyd-steinberg" dither-contrast="1.3" dither-serpentine="true">
+<!-- Bitmap style -->
+<img src="photo.jpg" dither="threshold">
 
 <!-- Color pixel art -->
 <img src="photo.jpg" dither="ordered" dither-color="true" dither-levels="3">
@@ -108,7 +107,7 @@ sepia                4 shades vintage
 ```javascript
 // Dynamic processing
 DitherLib.apply(img, {
-  algorithm: 'sierra',
+  algorithm: 'burkes',
   palette: 'c64',
   serpentine: true,
   diffusion: 0.8
@@ -121,4 +120,3 @@ const controller = DitherLib.applyToVideo(video, canvas, {
   fps: 30
 });
 ```
-
