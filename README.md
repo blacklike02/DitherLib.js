@@ -20,7 +20,7 @@ dithering javascript library
 ```
 dither               Algorithm (floyd-steinberg, atkinson, burkes, ordered, random, threshold)
 dither-palette       Palette (gameboy, c64, cga, ega, apple2, bw, sepia)
-dither-levels        Color count 2-256 (default 2)
+dither-levels        Color count 2-256 (default 8)
 dither-color         Color mode true/false (default false)
 dither-contrast      Contrast 0.1-3.0 (default 1.0)
 dither-brightness    Brightness -1.0 - 1.0 (default 0)
