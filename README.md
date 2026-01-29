@@ -55,18 +55,18 @@ ctrl.start();
 ```
 ## Algorithms
 ```
-floyd-steinberg      Universal, classic
-atkinson             Soft effect
-burkes               Fast, good quality
-jarvis-judice-ninke  High quality, slow
-stucki               High quality diffusion
-sierra               Balanced quality/speed
-sierra-2             Lighter Sierra
-sierra-lite          Fastest Sierra
-fan                  Directional diffusion
-ordered/bayer        Patterns, for textures
-random/noise         Random noise
-threshold/bitmap     Simple black & white
+floyd-steinberg      
+atkinson            
+burkes               
+jarvis-judice-ninke  
+stucki            
+sierra             
+sierra-2          
+sierra-lite     
+fan                 
+ordered/bayer       
+random/noise       
+threshold/bitmap     
 ```
 ## Palettes
 ```
